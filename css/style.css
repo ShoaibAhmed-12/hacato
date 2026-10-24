@@ -1,0 +1,55 @@
+/* 1. Colours (change the theme here) */
+:root{--bg:#f2f4f9;--ink:#1b2440;--mut:#6b7691;--pri:#0f9d8a;--pur:#5b4bc7;--org:#e8952c;--red:#d94452;--navy:#1f2a44;--line:#e3e7f0}
+*{box-sizing:border-box;margin:0}
+/* 2. Base text and headings */
+body{font:15px/1.5 "Segoe UI",system-ui,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:inherit;text-decoration:none}h1{font-size:24px}h2{font-size:22px}h3{font-size:17px;margin-bottom:12px}
+.mut,.link{color:var(--mut)}.link{margin-top:14px;text-align:center}.link a{color:var(--pur);font-weight:600}
+/* 3. Sidebar and page layout */
+.side{position:fixed;inset:0 auto 0 0;width:236px;background:var(--navy);color:#cfd6ea;padding:20px 14px;display:flex;flex-direction:column;gap:4px;z-index:20;transition:transform .25s}
+.side b{color:#fff;font-size:21px;padding:2px 10px 18px}
+.side a{padding:10px 12px;border-radius:10px}.side a:hover{background:#2d3a5c}.side a.on{background:var(--pri);color:#fff}
+.main{margin-left:236px;padding:24px;max-width:1200px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;color:var(--mut)}
+.burger{display:none}
+/* 4. Cards and stat boxes */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:16px}
+.cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:16px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 14px #1b24400a;min-width:0}
+.stat{border-left:5px solid var(--pri)}.stat.o{border-color:var(--org)}.stat.p{border-color:var(--pur)}.stat.r{border-color:var(--red)}
+.stat b{font-size:34px;line-height:1.1;display:block;text-transform:capitalize}.stat span{color:var(--mut);font-size:13px}
+/* 5. Tables and status badges */
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--mut);font-weight:600;font-size:12px;padding:8px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:10px 8px;border-bottom:1px solid var(--line)}
+.empty{color:var(--mut);padding:14px 4px;text-align:center}
+.badge{padding:2px 10px;border-radius:99px;font-size:12px;font-weight:600;background:#e8ecf5;color:var(--mut);text-transform:capitalize}
+.present,.approved{background:#d9f4ee;color:#0a7a6a}.late,.pending,.half{background:#fdeed6;color:#b5701a}.absent,.rejected{background:#fbe0e3;color:var(--red)}
+/* 6. Forms and buttons */
+label{display:block;font-size:13px;font-weight:600;margin-bottom:12px}
+input,select,textarea{display:block;width:100%;margin-top:5px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus,.btn:focus-visible{outline:3px solid #0f9d8a44;border-color:var(--pri)}
+input[type=checkbox]{display:inline;width:auto;margin-right:4px}.days label{display:inline-block;margin-right:12px}
+.err{display:block;color:var(--red);font-weight:500;margin-top:3px}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{filter:brightness(.93)}.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.pur{background:var(--pur)}.btn.red{background:var(--red)}.btn.o{background:var(--org)}.btn.sm{padding:5px 12px;font-size:13px}.btn.w{width:100%}.btn:disabled{opacity:.4;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row.sb{justify-content:space-between}.row>input,.row>select{width:auto;flex:1;margin:0;min-width:140px}
+/* 7. Pop-ups and messages */
+dialog{border:0;border-radius:16px;padding:22px;width:min(440px,92vw);box-shadow:0 20px 60px #0004;margin:auto}dialog::backdrop{background:#1b244088}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;z-index:99;box-shadow:0 8px 24px #0003}.toast.bad{background:var(--red)}
+/* 8. Login page */
+.auth{min-height:100vh;display:grid;place-items:center;padding:16px;background:linear-gradient(135deg,var(--navy) 55%,var(--pri))}
+.auth .card{width:min(420px,100%);padding:28px}.auth h1{font-size:26px;color:var(--pri);margin-bottom:18px}.auth h2{margin-bottom:4px}.auth p.mut{margin-bottom:16px}
+.code{background:#fdeed6;border-radius:10px;padding:10px 12px;margin-bottom:14px;font-size:13px}.code b{font-size:20px;letter-spacing:3px}
+/* 9. Clock, helper chat, announcements, payslip */
+.clock{font-size:34px;font-weight:700}
+.chat{height:230px;overflow-y:auto;background:var(--bg);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.msg{max-width:85%;padding:8px 12px;border-radius:12px;background:#fff;align-self:flex-start;font-size:14px}.msg.me{background:var(--pur);color:#fff;align-self:flex-end}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chips button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:4px 10px;font-size:12px;cursor:pointer}
+.note{border-left:4px solid var(--pur);padding:6px 10px;margin-bottom:8px;background:var(--bg);border-radius:6px}
+.slip td:last-child,.slip th:last-child{text-align:right}.slip .net td{font-weight:700;font-size:16px;border-top:2px solid var(--ink)}
+/* 10. Phone layout (screens under 820px) and printing */
+@media(max-width:820px){.side{transform:translateX(-100%)}.side.open{transform:none}.main{margin-left:0;padding:14px}.burger{display:inline-block;padding:6px 12px}.cols{grid-template-columns:1fr}}
+@media print{.side,.top,.noprint{display:none!important}.main{margin:0;padding:0}.card{box-shadow:none;border:0}}
